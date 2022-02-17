@@ -1,3 +1,16 @@
+/* font-family: 'Actor', sans-serif;
+font-family: 'Calistoga', cursive;
+font-family: 'Roboto', sans-serif; */
+body {
+  font-family: "Actor", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Calistoga", cursive;
+}
+
 body,
 header,
 ul {
@@ -8,7 +21,7 @@ ul {
 header {
   position: fixed;
   background-color: #42919c;
-  height: 125px;
+  height: 80px;
   top: 0;
   left: 0;
   right: 0;
@@ -19,24 +32,20 @@ header {
 }
 
 header img {
-  width: 160px;
+  width: 115px;
 }
 
-i {
-  font-size: 50px;
-  color: #cd5905;
+.header-icon {
+  width: 40px;
   padding: 10px;
-  border: 2px solid #ffffff;
-  border-radius: 10%;
-  background-color: #ffffff;
 }
-/* outline button icons in white */
 
 .slogan {
-  margin-top: 160px;
+  margin-top: 110px;
+  margin-bottom: 70px;
   text-align: center;
 }
 
-li img {
+img {
   width: 50px;
 }
