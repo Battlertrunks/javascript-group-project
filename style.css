@@ -1,0 +1,42 @@
+body,
+header,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  background-color: #42919c;
+  height: 125px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+header img {
+  width: 160px;
+}
+
+i {
+  font-size: 50px;
+  color: #cd5905;
+  padding: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 10%;
+  background-color: #ffffff;
+}
+/* outline button icons in white */
+
+.slogan {
+  margin-top: 160px;
+  text-align: center;
+}
+
+li img {
+  width: 50px;
+}
