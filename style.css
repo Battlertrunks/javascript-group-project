@@ -13,9 +13,18 @@ h3 {
 
 body,
 header,
-ul {
+ul,
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style: none;
 }
 
 header {
@@ -48,4 +57,66 @@ header img {
 
 img {
   width: 50px;
+}
+
+/* Fancy styles */
+
+.fancy-container {
+  background-color: #cd5905;
+  height: 265px;
+  padding-bottom: 20px;
+}
+
+.drips-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.fancy-container h3 {
+  color: #fff;
+  font-size: 28px;
+  padding: 15px;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px;
+}
+
+.drips-container li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #42919c;
+  width: 150px;
+  height: 185px;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px;
+  color: #fff;
+}
+
+.drips-container img {
+  margin-top: -55%;
+  min-width: 150px;
+}
+
+.drips-container .img-container {
+  min-width: 150px;
+  height: 112px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.drips-container h4 {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.drips-container .descrip-text {
+  width: 75%;
+  font-size: 9px;
+}
+
+.drips-container .price-text p {
+  font-size: 16px;
 }
