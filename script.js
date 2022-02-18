@@ -1,6 +1,6 @@
 "use strict";
 
-const fancyDripsItems = [
+const dripsItems = [
   [
     {
       image: "./assets/Coffee-images/macchiato.jpeg",
@@ -68,9 +68,9 @@ const fancyDripsItems = [
     },
   ],
 ];
-
+// ourDrinks[0][0]
 window.addEventListener("load", (e) => {
-  fancyDripsItems.forEach((item, i) => {
+  dripsItems.forEach((item, i) => {
     const categoryDrinks =
       i === 0
         ? ".fancy-drinks-list"
