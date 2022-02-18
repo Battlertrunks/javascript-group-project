@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Actor&family=Calistoga&family=Roboto:wght@100;300;400;500&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/74673bae8b.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Drip Coffee</title>
     <link
       rel="icon"
@@ -61,26 +65,30 @@
       <section class="view-cart">
         <div class="cart-header-screen">
           <h2>Your Cart</h2>
-          <p>X</p>
+          <p>
+            <i class="fa-solid fa-xmark"></i>
+          </p>
         </div>
         <ul class="cart-items-container"></ul>
-        <h3>Pickup Order</h3>
-        <div class="cart-cost">
-          <div>
-            <p>Subtotal:</p>
-            <p>$00.00</p>
+        <div class="pick-up-order-container">
+          <h3>Pickup Order</h3>
+          <div class="cart-cost">
+            <div class="cart-totals">
+              <p>Subtotal:</p>
+              <p>$00.00</p>
+            </div>
+            <div class="cart-totals">
+              <p>Tax:</p>
+              <p>$00.00</p>
+            </div>
+            <div class="cart-totals">
+              <p>Total:</p>
+              <p>$00.00</p>
+            </div>
           </div>
-          <div>
-            <p>Tax:</p>
-            <p>$00.00</p>
-          </div>
-          <div>
-            <p>Total:</p>
-            <p>$00.00</p>
-          </div>
+          <a class="pay-with-card" href="#"><p>Pay with Card</p></a>
+          <a class="pay-with-cash" href="#"><p>Pay with Cash</p></a>
         </div>
-        <a href="#"><p>Pay with card</p></a>
-        <a href="#"><p>Pay with cash</p></a>
       </section>
     </main>
     <footer>
