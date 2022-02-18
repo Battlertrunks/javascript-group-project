@@ -1,42 +1,104 @@
 "use strict";
 
-const fancyDripsItems = [
-  {
-    image: "./assets/Coffee-images/macchiato.jpeg",
-    name: "driptastic macchiato",
-    description: "A rich espresso dressed in foam",
-    price: 2.99,
-  },
-  {
-    image: "./assets/Coffee-images/frappe.jpeg",
-    name: "drippy pour-over",
-    description: "Espresso and coffee mixed to perfection on ice",
-    price: 4.99,
-  },
+const dripsItems = [
+  [
+    {
+      image: "./assets/Coffee-images/macchiato.jpeg",
+      name: "driptastic macchiato",
+      description: "A rich espresso dressed in foam",
+      price: 2.99,
+    },
+    {
+      image: "./assets/Coffee-images/frappe.jpeg",
+      name: "drippy pour-over",
+      description: "Espresso and coffee mixed to perfection on ice",
+      price: 4.99,
+    },
+  ],
+  [
+    {
+      image: "./assets/Coffee-images/hot-brew.jpeg",
+      name: "house brew",
+      description: "Our flagship coffee using our in house grounds",
+      price: 1.99,
+    },
+    {
+      image: "./assets/Coffee-images/espresso.jpeg",
+      name: "espresso",
+      description: "Full bodied espresso sold by the shot",
+      price: 2.99,
+    },
+    {
+      image: "./assets/Coffee-images/cappuccino.jpeg",
+      name: "cappuccino",
+      description: "A dark espresso covered in a thick milk foam",
+      price: 2.99,
+    },
+    {
+      image: "./assets/Coffee-images/latte.jpeg",
+      name: "caffe latte",
+      description: "Rich boldness and balance in an espresso",
+      price: 3.2,
+    },
+  ],
+  [
+    {
+      image: "./assets/Coffee-images/cold-brew.jpeg",
+      name: "cold brew",
+      description: "Our house brew on the rocks",
+      price: 1.99,
+    },
+    {
+      image: "./assets/Coffee-images/iced-americano.jpeg",
+      name: "iced americano",
+      description: "A bold espresso stretched and chilled to perfection",
+      price: 3.5,
+    },
+    {
+      image: "./assets/Coffee-images/iced-mocha.jpeg",
+      name: "iced mocha",
+      description: "A classic chocolate staple with added cream on ice",
+      price: 4.5,
+    },
+    {
+      image: "./assets/Coffee-images/iced-chai-tea-latte.jpeg",
+      name: "iced chai tea latte",
+      description: "A balance between savory and sweet",
+      price: 2.5,
+    },
+  ],
 ];
-
-const dripsContainer = document.querySelector(".drips-container");
-
+// ourDrinks[0][0]
 window.addEventListener("load", (e) => {
-  fancyDripsItems.forEach((item) => {
-    const itemContainer = document.createElement("li");
-    const imageContainer = document.createElement("div");
-    const fancyCoffeeImage = document.createElement("img");
-    const name = document.createElement("h4");
-    const description = document.createElement("p");
-    const price = document.createElement("p");
-    itemContainer.classList.add("item-container");
-    imageContainer.classList.add("img-container");
-    description.classList.add("descrip-text");
-    price.classList.add("price-text");
+  dripsItems.forEach((item, i) => {
+    const categoryDrinks =
+      i === 0
+        ? ".fancy-drinks-list"
+        : i === 1
+        ? ".hot-drinks-list"
+        : ".cold-drinks-list";
+    const dripsContainer = document.querySelector(categoryDrinks);
+    console.log(categoryDrinks);
+    item.forEach((objItem) => {
+      const itemContainer = document.createElement("li");
+      const imageContainer = document.createElement("div");
+      const fancyCoffeeImage = document.createElement("img");
+      const name = document.createElement("h4");
+      const description = document.createElement("p");
+      const price = document.createElement("p");
+      itemContainer.classList.add("item-container");
+      imageContainer.classList.add("img-container");
+      description.classList.add("descrip-text");
+      price.classList.add("price-text");
 
-    name.textContent = item.name;
-    fancyCoffeeImage.setAttribute("src", item.image);
-    description.textContent = item.description;
-    price.textContent = item.price;
+      name.textContent = objItem.name;
+      fancyCoffeeImage.setAttribute("src", objItem.image);
+      description.textContent = objItem.description;
+      price.textContent = objItem.price;
 
-    itemContainer.append(imageContainer, name, description, price);
-    imageContainer.append(fancyCoffeeImage);
-    dripsContainer.append(itemContainer);
+      itemContainer.append(imageContainer, name, description, price);
+      imageContainer.append(fancyCoffeeImage);
+      dripsContainer.append(itemContainer);
+    });
   });
 });

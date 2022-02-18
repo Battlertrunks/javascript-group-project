@@ -63,31 +63,34 @@ img {
 
 .fancy-container {
   background-color: #cd5905;
-  height: 265px;
+  height: 100%;
   padding-bottom: 20px;
 }
 
-.drips-container {
+.drinks-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.fancy-container h3 {
+.category-drink h3 {
   color: #fff;
   font-size: 28px;
   padding: 15px;
   text-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px;
 }
 
-.drips-container li {
+.drinks-container li {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: #42919c;
   width: 150px;
+  max-width: 300px;
+  min-width: 150px;
   height: 185px;
   margin: 0 auto;
+  margin-bottom: 75px;
   padding-bottom: 15px;
   text-align: center;
   border-radius: 10px;
@@ -95,28 +98,59 @@ img {
   color: #fff;
 }
 
-.drips-container img {
-  margin-top: -55%;
+.drinks-container img {
+  margin-top: -30%;
   min-width: 150px;
+  max-width: 300px;
+  width: 150px;
+  height: 185px;
 }
 
-.drips-container .img-container {
+.drinks-container .img-container {
   min-width: 150px;
+  max-width: 300px;
+  width: 150px;
+  height: 185px;
   height: 112px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
 
-.drips-container h4 {
+.drinks-container h4 {
   font-size: 14px;
   text-decoration: underline;
 }
 
-.drips-container .descrip-text {
+.drinks-container .descrip-text {
   width: 75%;
   font-size: 9px;
 }
 
-.drips-container .price-text p {
+.drinks-container .price-text p {
   font-size: 16px;
 }
+
+.hot-drinks-container {
+  margin-top: 50px;
+}
+
+.hot-drinks-container h3 {
+  padding: 50px;
+  color: #42919c;
+}
+
+.hot-drinks-list li {
+  background-color: #cd5905;
+}
+
+.cold-drinks-container {
+  margin-top: 50px;
+}
+
+.cold-drinks-container h3 {
+  padding: 50px;
+  color: #cd5905;
+}
+
+/* I have only commit MAKE SURE TO FINISH
+   AT NUMBER 6 C. TOMORROW FEB 18TH */
