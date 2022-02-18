@@ -204,6 +204,76 @@ button {
 /* I have only commit MAKE SURE TO FINISH
    AT NUMBER 6 C. TOMORROW FEB 18TH */
 
+.cart-header-screen {
+  display: flex;
+  color: #444444;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.cart-header-screen h2 {
+  font-size: 32px;
+}
+
+.cart-header-screen i {
+  color: #cd5905;
+  font-size: 35px;
+}
+
+.pick-up-order-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 80%;
+}
+.pick-up-order-container h3 {
+  color: #444444;
+  font-family: "Actor", sans-serif;
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+.cart-cost {
+  width: 65%;
+  background-color: #f9f9f9;
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  padding: 15px;
+}
+
+.cart-cost p {
+  color: #777777;
+}
+
+.cart-totals {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.pick-up-order-container a {
+  padding: 5px 0;
+  width: 65%;
+  text-decoration: none;
+  font-family: "Calistoga", cursive;
+  text-align: center;
+  margin: 15px 0 0 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 7px;
+}
+
+.pay-with-card {
+  background-color: #42919c;
+  color: #fff;
+  border: 2px solid #cd5905;
+}
+
+.pay-with-cash {
+  color: #000;
+  border: 2px solid #000;
+}
+
 footer {
   background-color: #42919c;
   color: #fff;
