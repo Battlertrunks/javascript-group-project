@@ -120,6 +120,8 @@ window.addEventListener("load", (e) => {
 
 let counter = 0;
 const main = document.querySelector("main");
+const viewCart = document.querySelector(".view-cart");
+const header = document.querySelector("header");
 
 main.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-icon")) {
@@ -134,5 +136,15 @@ main.addEventListener("click", (e) => {
     itemAmountNumber.textContent = "99+";
   } else {
     itemAmountNumber.textContent = `${checkOut.length}`;
+  }
+  if (e.target.id === "close-btn") {
+    viewCart.classList.remove("slide-effect");
+  }
+});
+
+header.addEventListener("click", (e) => {
+  if (e.target.id === "shopping-cart-icon") {
+    viewCart.style.display = "block";
+    viewCart.classList.add("slide-effect");
   }
 });

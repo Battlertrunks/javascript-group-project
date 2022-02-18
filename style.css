@@ -3,6 +3,7 @@ font-family: 'Calistoga', cursive;
 font-family: 'Roboto', sans-serif; */
 body {
   font-family: "Actor", sans-serif;
+  overflow: hidden;
 }
 
 h1,
@@ -201,8 +202,22 @@ button {
   color: #cd5905;
 }
 
-/* I have only commit MAKE SURE TO FINISH
-   AT NUMBER 6 C. TOMORROW FEB 18TH */
+.view-cart {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  /* transition: 0.7s all ease; */
+  transform: translateX(100%);
+}
+
+.slide-effect {
+  transition: 0.7s all ease;
+  transform: translateX(0%);
+}
 
 .cart-header-screen {
   display: flex;
@@ -299,14 +314,4 @@ footer {
 
 .footer-logo {
   width: 55px;
-}
-
-.view-cart {
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #fff;
 }
