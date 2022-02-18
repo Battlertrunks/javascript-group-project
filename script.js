@@ -72,6 +72,7 @@ const dripsItems = [
 const checkOut = [];
 
 const addButton = "assets/icons/add.button.svg";
+const itemAmountNumber = document.querySelector(".cart-amount");
 
 // ourDrinks[0][0]
 window.addEventListener("load", (e) => {
@@ -124,9 +125,14 @@ main.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-icon")) {
     counter++;
     const parentItem = e.target.parentNode.parentNode;
-    checkOut.push(dripsItems[parentItem.dataset.outerindex], [
-      parentItem.dataset.innerindex,
-    ]);
-    console.log(checkOut);
+    checkOut.push(
+      dripsItems[parentItem.dataset.outerindex][parentItem.dataset.innerindex]
+    );
+  }
+  if (checkOut.length > 99) {
+    itemAmountNumber.style.fontSize = "11px";
+    itemAmountNumber.textContent = "99+";
+  } else {
+    itemAmountNumber.textContent = `${checkOut.length}`;
   }
 });

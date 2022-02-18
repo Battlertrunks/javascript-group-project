@@ -51,6 +51,35 @@ header img {
   padding: 10px;
 }
 
+.shopping-cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-amount {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  transform: translate(-50, -50%);
+  height: 25px;
+  width: 25px;
+  background-color: #804d28;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 1px 3px 10px #000;
+  font-family: "Calistoga", cursive;
+}
+
+.cart-amount:hover {
+  transition: 0.3s all ease;
+  background-color: #fff;
+  color: #cd5905;
+}
+
 .slogan {
   margin-top: 110px;
   margin-bottom: 40px;
@@ -104,10 +133,13 @@ button {
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: transparent;
+  width: 50px;
+  height: 50px;
   border: none;
-  border-radius: 50%;
+  background-color: transparent;
+  border-radius: 25px;
   transform: translate(40%, 50%);
+  cursor: pointer;
 }
 
 .drinks-container .img-container img {
@@ -120,6 +152,7 @@ button {
 
 .add-button img {
   width: 50px;
+  transform: translate(-13%, 4%);
 }
 
 .drinks-container .img-container {
@@ -196,4 +229,14 @@ footer {
 
 .footer-logo {
   width: 55px;
+}
+
+.view-cart {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
 }
