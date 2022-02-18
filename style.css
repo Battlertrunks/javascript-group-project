@@ -154,3 +154,30 @@ img {
 
 /* I have only commit MAKE SURE TO FINISH
    AT NUMBER 6 C. TOMORROW FEB 18TH */
+
+footer {
+  background-color: #42919c;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0px 5px 0px 10px;
+  position: relative;
+  bottom: 0;
+  margin: 0;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container img {
+  width: 35px;
+}
+
+.footer-logo {
+  width: 55px;
+}
