@@ -69,11 +69,14 @@ const dripsItems = [
   ],
 ];
 
+const checkOut = [];
+
 const addButton = "assets/icons/add.button.svg";
 
 // ourDrinks[0][0]
 window.addEventListener("load", (e) => {
   dripsItems.forEach((item, i) => {
+    const indexNumber = i;
     const categoryDrinks =
       i === 0
         ? ".fancy-drinks-list"
@@ -82,7 +85,7 @@ window.addEventListener("load", (e) => {
         : ".cold-drinks-list";
     const dripsContainer = document.querySelector(categoryDrinks);
     console.log(categoryDrinks);
-    item.forEach((objItem) => {
+    item.forEach((objItem, i) => {
       const itemContainer = document.createElement("li");
       const imageContainer = document.createElement("div");
       const fancyCoffeeImage = document.createElement("img");
@@ -96,8 +99,11 @@ window.addEventListener("load", (e) => {
       description.classList.add("descrip-text");
       price.classList.add("price-text");
 
+      itemContainer.setAttribute("data-outerIndex", indexNumber);
+      itemContainer.setAttribute("data-innerIndex", i);
       name.textContent = objItem.name;
       addImage.setAttribute("src", addButton);
+      addImage.setAttribute("class", "add-icon");
       button.setAttribute("class", "add-button");
       fancyCoffeeImage.setAttribute("src", objItem.image);
       description.textContent = objItem.description;
@@ -111,13 +117,16 @@ window.addEventListener("load", (e) => {
   });
 });
 
-// let counter = 0;
-// const button = document.querySelectorAll(".add-button");
-// console.log(button);
+let counter = 0;
+const main = document.querySelector("main");
 
-// button.forEach((btn) => {
-//   btn.addEventListener("click", (e) => {
-//     counter++;
-//     console.log(counter);
-//   });
-// });
+main.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-icon")) {
+    counter++;
+    const parentItem = e.target.parentNode.parentNode;
+    checkOut.push(dripsItems[parentItem.dataset.outerindex], [
+      parentItem.dataset.innerindex,
+    ]);
+    console.log(checkOut);
+  }
+});
