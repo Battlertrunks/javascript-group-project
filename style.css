@@ -38,6 +38,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  border-bottom: 1px solid #fff;
 }
 
 header img {
@@ -51,7 +52,7 @@ header img {
 
 .slogan {
   margin-top: 110px;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -64,7 +65,6 @@ img {
 .fancy-container {
   background-color: #cd5905;
   height: 100%;
-  padding-bottom: 20px;
 }
 
 .drinks-container {
@@ -90,20 +90,35 @@ img {
   min-width: 150px;
   height: 185px;
   margin: 0 auto;
-  margin-bottom: 75px;
+  margin-bottom: 25px;
   padding-bottom: 15px;
   text-align: center;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px;
   color: #fff;
+  position: relative;
 }
 
-.drinks-container img {
+button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  transform: translate(40%, 50%);
+}
+
+.drinks-container .img-container img {
   margin-top: -30%;
   min-width: 150px;
   max-width: 300px;
   width: 150px;
   height: 185px;
+}
+
+.add-button img {
+  width: 50px;
 }
 
 .drinks-container .img-container {
@@ -131,11 +146,11 @@ img {
 }
 
 .hot-drinks-container {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .hot-drinks-container h3 {
-  padding: 50px;
+  padding: 15px;
   color: #42919c;
 }
 
@@ -144,11 +159,11 @@ img {
 }
 
 .cold-drinks-container {
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .cold-drinks-container h3 {
-  padding: 50px;
+  padding: 15px;
   color: #cd5905;
 }
 
