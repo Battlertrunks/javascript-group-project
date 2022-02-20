@@ -124,27 +124,119 @@ const viewCart = document.querySelector(".view-cart");
 const header = document.querySelector("header");
 
 main.addEventListener("click", (e) => {
+  // When the user adds an menu item to their cart
   if (e.target.classList.contains("add-icon")) {
     counter++;
     const parentItem = e.target.parentNode.parentNode;
     checkOut.push(
       dripsItems[parentItem.dataset.outerindex][parentItem.dataset.innerindex]
     );
+    addToListOfCart(parentItem);
   }
+  // If the user has over 100 orders to their cart, it will default to 99+
   if (checkOut.length > 99) {
     itemAmountNumber.style.fontSize = "11px";
     itemAmountNumber.textContent = "99+";
   } else {
     itemAmountNumber.textContent = `${checkOut.length}`;
   }
+
+  // When the user presses the X (close) button on payment screen
   if (e.target.id === "close-btn") {
     viewCart.classList.remove("slide-effect");
+    body.classList.remove("body-scroll-off");
   }
 });
 
+const body = document.querySelector("body");
+// When the user clicks on the shopping cart icon it will pop up the
+// check out page for them to see their items they have in their cart,
+// how much money is needed, and if they want to use card or cash.
 header.addEventListener("click", (e) => {
   if (e.target.id === "shopping-cart-icon") {
     viewCart.style.display = "block";
     viewCart.classList.add("slide-effect");
+    body.classList.add("body-scroll-off");
+  }
+});
+
+const cartItemContainer = document.querySelector(".cart-items-container");
+let subtotal = 0;
+
+// When the user adds items to the cart, it will create
+// new HTML elements to add into the list
+const addToListOfCart = () => {
+  const listItem = document.createElement("li");
+  const previewImage = document.createElement("img");
+  const detailsHolder = document.createElement("div");
+  const itemHeading = document.createElement("h4");
+  const price = document.createElement("p");
+  const remove = document.createElement("button");
+
+  listItem.dataset.elementNum = checkOut.length - 1;
+  listItem.classList.add("item-in-checkout");
+  previewImage.setAttribute("src", checkOut[checkOut.length - 1].image);
+  itemHeading.textContent = checkOut[checkOut.length - 1].name;
+  price.textContent = checkOut[checkOut.length - 1].price;
+  remove.textContent = "remove";
+  remove.setAttribute("class", "remove-Btn");
+
+  detailsHolder.append(itemHeading, price, remove);
+  listItem.append(previewImage, detailsHolder);
+  cartItemContainer.appendChild(listItem);
+
+  // Calculates the total price from the items in the cart
+  calculateTotal();
+};
+
+// When the user presses the remove button on the checkout screen
+// this will remove the item's HTML element and remove its array element.
+cartItemContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("remove-Btn")) {
+    const elementLocationIndex = document.querySelectorAll(".item-in-checkout");
+    checkOut.splice(e.target.dataset.elementNum, 1);
+    e.target.parentNode.parentNode.remove();
+    let indexPlacement = 0;
+    elementLocationIndex.forEach((index) => {
+      index.dataset.elementNum = indexPlacement;
+      indexPlacement++;
+    });
+    calculateTotal();
+  }
+});
+
+// Calculates the total of the price of all items that the user added
+// to their cart
+const calculateTotal = () => {
+  subtotal = 0;
+  checkOut.forEach((totalVal) => {
+    subtotal += totalVal.price;
+  });
+  subtotal = parseFloat(Math.round(subtotal * 100) / 100);
+  settingPrices();
+};
+
+// Getting variables and HTML classes to put price information on the
+// checkout screen.
+let tax = 0;
+const subtotalListing = document.querySelectorAll(".subtotal-p");
+const taxListing = document.querySelectorAll(".tax-p");
+const totalListing = document.querySelectorAll(".total-p");
+
+// Creating the format of how the prices are being set up. Starting with
+// subtotal, tax, then total.
+const settingPrices = () => {
+  tax = subtotal * 0.06;
+  subtotalListing.forEach(
+    (listing) => (listing.textContent = `$${subtotal.toFixed(2)}`)
+  );
+  taxListing.forEach((listing) => (listing.textContent = `$${tax.toFixed(2)}`));
+  totalListing.forEach(
+    (listing) => (listing.textContent = `$${(tax + subtotal).toFixed(2)}`)
+  );
+};
+
+viewCart.addEventListener("click", (e) => {
+  if (e.target.classList.contains("pay-with-card")) {
   }
 });
