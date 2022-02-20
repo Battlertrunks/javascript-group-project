@@ -29,10 +29,18 @@
         ><img
           src="assets/icons/side-bar-icon.svg"
           alt="Settings Bar"
-          class="header-icon"
+          class="header-icon side-bar-icon"
         />
       </a>
-      <h1><img src="assets/logos/drip logo.png" alt="Drip Logo" /></h1>
+      <div class="header-items-container">
+        <h1><img src="assets/logos/drip logo.png" alt="Drip Logo" /></h1>
+        <nav class="nav-bar">
+          <a href="#fancy-section">fancy drips</a>
+          <a href="#hot-section">hot drips</a>
+          <a href="#cold-section">cold drips</a>
+        </nav>
+      </div>
+
       <a class="shopping-cart-icon"
         ><img
           src="assets/icons/shoppingcart-icon.svg"
@@ -46,19 +54,19 @@
     <main>
       <h2 class="slogan">came through drippin'</h2>
       <!-- Fancy begins here -->
-      <section class="fancy-container category-drink">
+      <section class="fancy-container category-drink" id="fancy-section">
         <h3>fancy drips</h3>
         <ul class="fancy-drinks-list drinks-container"></ul>
       </section>
       <!-- Fancy ends here -->
       <!-- Hot begins here -->
-      <section class="hot-drinks-container category-drink">
+      <section class="hot-drinks-container category-drink" id="hot-section">
         <h3>hot drips</h3>
         <ul class="hot-drinks-list drinks-container"></ul>
       </section>
       <!-- Hot ends here -->
       <!-- Cold begins here -->
-      <section class="cold-drinks-container category-drink">
+      <section class="cold-drinks-container category-drink" id="cold-section">
         <h3>cold drips</h3>
         <ul class="cold-drinks-list drinks-container"></ul>
       </section>
