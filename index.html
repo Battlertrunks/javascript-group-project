@@ -70,25 +70,129 @@
             <i class="fa-solid fa-xmark" id="close-btn"></i>
           </a>
         </div>
-        <ul class="cart-items-container"></ul>
-        <div class="pick-up-order-container">
+        <ul class="cart-items-container display-options-off"></ul>
+        <div class="pick-up-order-container display-options-off">
           <h3>Pickup Order</h3>
           <div class="cart-cost">
             <div class="cart-totals">
               <p>Subtotal:</p>
-              <p>$00.00</p>
+              <p class="subtotal-p">$00.00</p>
             </div>
             <div class="cart-totals">
               <p>Tax:</p>
-              <p>$00.00</p>
+              <p class="tax-p">$00.00</p>
             </div>
             <div class="cart-totals">
               <p>Total:</p>
-              <p>$00.00</p>
+              <p class="total-p">$00.00</p>
             </div>
           </div>
           <a class="pay-with-card" href="#"><p>Pay with Card</p></a>
           <a class="pay-with-cash" href="#"><p>Pay with Cash</p></a>
+        </div>
+        <div class="pay-with-card-container display-options-off">
+          <p>Total: $0.00</p>
+          <form class="card-payment-form">
+            <label for="card-holder-name">Card Holder Name</label>
+            <input type="text" name="card-holder-name" id="card-holder-name" />
+            <label for="card-number">Card Number</label>
+            <input type="number" name="card-number" id="card-number" />
+            <div class="card-exp-cvv">
+              <div>
+                <label for="card-expiration-date">Card Exp.</label>
+                <input
+                  type="date"
+                  name="card-expiration-date"
+                  id="card-expiration-date"
+                />
+              </div>
+              <div>
+                <label for="cvv">CVV</label>
+                <input type="number" name="cvv" id="cvv" />
+              </div>
+            </div>
+            <button>Pay</button>
+          </form>
+          <p class="or-option-card">or</p>
+          <div class="apple-google-btns">
+            <button class="apple-pay">Apple Pay</button>
+            <button class="google-pay">Google Pay</button>
+          </div>
+        </div>
+        <div class="pay-with-cash-container display-options-off">
+          <p class="pay-with-cash-total">Total: $0.00</p>
+          <form class="cash-form">
+            <label for="cash-amount">Cash Amount</label>
+            <input type="number" name="cash-amount" id="cash-amount" />
+            <button>Enter</button>
+          </form>
+          <div class="calculate-cash-container">
+            <div>
+              <p>Deposited</p>
+              <p class="cash-deposited">$0.00</p>
+            </div>
+            <div>
+              <p>Cash Back</p>
+              <p class="cash-back">$0.00</p>
+            </div>
+          </div>
+          <button class="finish-cash-btn">Finish</button>
+        </div>
+        <div class="receipt-display-container">
+          <div class="logo-and-reciept-id">
+            <img src="./assets/logos/drip logo.png" alt="Drip logo" />
+            <div class="reciept-id">
+              <div class="reciept-number-container">
+                <p>Receipt Number:</p>
+                <p class="recipet-number">00000000</p>
+              </div>
+              <div class="reciept-date-container">
+                <p>Receipt Date:</p>
+                <p class="reciept-date">01/01/2022</p>
+              </div>
+              <div class="reciept-served-by-container">
+                <p>Served By:</p>
+                <p class="reciept-served-by">id1234567</p>
+              </div>
+            </div>
+          </div>
+          <div class="receipt-table">
+            <div class="reciept-titles">
+              <p>Qty:</p>
+              <p>Item:</p>
+              <p>Cost:</p>
+            </div>
+            <div class="items-bought-and-totals">
+              <div class="items-bought-container"></div>
+              <div class="totals-container">
+                <div>
+                  <p>Subtotal:</p>
+                  <p class="subtotal-receipt">$0.00</p>
+                </div>
+                <div>
+                  <p>Tax:</p>
+                  <p class="tax-reciept">$0.00</p>
+                </div>
+                <div>
+                  <p>Total:</p>
+                  <p class="total-reciept">$0.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="transaction-code-container">
+            <p>Transaction code: 1234567890</p>
+            <img src="" alt="Bar code scan" />
+            <p>Transaction date: 01/01/2022</p>
+          </div>
+          <div class="qr-code-container">
+            <p>Enjoyed our service?</p>
+            <p>
+              Please do this survey to get a free iced coffee on your next
+              visit!
+            </p>
+            <img src="" alt="QR code for survey" />
+          </div>
         </div>
       </section>
     </main>

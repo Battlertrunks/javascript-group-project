@@ -3,12 +3,16 @@ font-family: 'Calistoga', cursive;
 font-family: 'Roboto', sans-serif; */
 body {
   font-family: "Actor", sans-serif;
+}
+
+.body-scroll-off {
   overflow: hidden;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Calistoga", cursive;
 }
 
@@ -130,7 +134,7 @@ img {
   position: relative;
 }
 
-button {
+.add-button {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -210,6 +214,7 @@ button {
   right: 0;
   bottom: 0;
   background-color: #fff;
+  overflow-y: scroll;
   /* transition: 0.7s all ease; */
   transform: translateX(100%);
 }
@@ -230,6 +235,48 @@ button {
   font-size: 32px;
 }
 
+.cart-items-container {
+  position: relative;
+  overflow-y: scroll;
+  left: 0;
+  right: 0;
+  max-height: 300px;
+  min-height: 200px;
+  margin: 5px 20px;
+}
+
+.item-in-checkout {
+  display: flex;
+  padding: 15px;
+}
+
+.item-in-checkout:nth-child(odd) {
+  background-color: #cd5905;
+  color: #fff;
+}
+
+.item-in-checkout img {
+  border-radius: 50px;
+}
+
+.item-in-checkout div {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-in-checkout button {
+  background-color: #fff;
+  width: 60px;
+  border: none;
+  color: red;
+  text-decoration: underline;
+  border-radius: 20px;
+  padding: 3px;
+  cursor: pointer;
+}
+
 .cart-header-screen i {
   color: #cd5905;
   font-size: 35px;
@@ -240,8 +287,9 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  height: 80%;
+  margin: 25px 0;
 }
+
 .pick-up-order-container h3 {
   color: #444444;
   font-family: "Actor", sans-serif;
@@ -287,6 +335,208 @@ button {
 .pay-with-cash {
   color: #000;
   border: 2px solid #000;
+}
+
+.pay-with-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 5px;
+}
+
+.card-payment-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
+}
+
+.card-payment-form label,
+.cash-form label {
+  margin-top: 20px;
+  color: #8f8f8f;
+}
+
+.card-payment-form input,
+.cash-form input {
+  border: none;
+  border-bottom: 1px solid #8f8f8f;
+  padding: 5px 0;
+  color: #888;
+  font-size: 16px;
+}
+
+.card-payment-form input:focus,
+.cash-form input:focus {
+  outline: none;
+}
+
+.card-exp-cvv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-exp-cvv div {
+  display: flex;
+  flex-direction: column;
+}
+
+.pay-with-card-container button,
+.pay-with-cash-container button {
+  cursor: pointer;
+}
+
+.card-payment-form button {
+  width: 70%;
+}
+
+.card-payment-form button,
+.finish-cash-btn {
+  margin: 0 auto;
+  margin-top: 25px;
+  height: 35px;
+  border: 2.5px solid #cd5905;
+  border-radius: 4px;
+  background-color: #42919c;
+  color: #fff;
+}
+
+.or-option-card {
+  text-align: center;
+}
+
+.apple-google-btns {
+  border-top: 2px solid #888;
+  margin-top: 10px;
+}
+
+.apple-google-btns button {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  height: 35px;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+}
+
+.apple-pay {
+  background-color: #333333;
+}
+
+.google-pay {
+  background-color: #7b86ea;
+}
+
+.pay-with-cash-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.pay-with-cash-total {
+  text-align: right;
+}
+
+.cash-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.cash-form button {
+  background-color: #333333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 0;
+  width: 85%;
+  margin: 17px auto;
+  margin-bottom: 10px;
+}
+
+.calculate-cash-container {
+  margin: 5px auto;
+  width: 50%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 2px solid #dedede;
+  border-radius: 2px;
+}
+
+.calculate-cash-container div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.finish-cash-btn {
+  width: 55%;
+  margin: 10px auto;
+}
+
+.display-options-off {
+  display: none;
+}
+
+.receipt-display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+  width: 350px;
+  margin: 75px auto;
+  background-color: #f6f6f6;
+  padding: 0 25px;
+}
+
+.logo-and-reciept-id {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.logo-and-reciept-id img {
+  width: 100px;
+}
+
+.reciept-id {
+  width: 210px;
+}
+
+.reciept-id div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .receipt-table {
+} */
+
+.reciept-titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.items-bought-and-totals {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.totals-container div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.transaction-code-container {
+  text-align: center;
+}
+
+.qr-code-container {
+  text-align: center;
 }
 
 footer {
