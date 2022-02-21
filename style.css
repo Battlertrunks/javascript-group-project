@@ -509,6 +509,12 @@ img {
   border-radius: 4px;
   background-color: #42919c;
   color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px;
+}
+
+.finish-cash-btn:hover {
+  transition: 0.3s all ease;
+  background-color: #cd5905;
 }
 
 .or-option-card {
@@ -518,6 +524,10 @@ img {
 .apple-google-btns {
   border-top: 2px solid #888;
   margin-top: 10px;
+}
+
+.apple-google-btns i {
+  font-size: 35px;
 }
 
 .apple-google-btns button {
@@ -584,6 +594,14 @@ img {
   width: 85%;
   margin: 17px auto;
   margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 10px;
+}
+
+.cash-form button:hover {
+  transition: 0.3s all ease;
+  color: #333333;
+  outline: 2px solid #333333;
+  background-color: #fff;
 }
 
 .calculate-cash-container {
