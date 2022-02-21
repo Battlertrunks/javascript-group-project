@@ -51,8 +51,9 @@ header {
   z-index: 2;
 }
 
-header img {
+h1 img {
   width: 115px;
+  height: 115px;
 }
 
 .nav-bar {
@@ -61,7 +62,12 @@ header img {
 
 .header-icon {
   width: 40px;
+  height: 40px;
   padding: 10px;
+}
+
+.hamburger-icon {
+  cursor: pointer;
 }
 
 .shopping-cart-icon {
@@ -210,6 +216,11 @@ img {
   border-radius: 25px;
   transform: translate(40%, 50%);
   cursor: pointer;
+}
+
+.add-icon {
+  width: 50px;
+  height: 50px;
 }
 
 .drinks-container .img-container img {
@@ -657,10 +668,12 @@ footer {
 
 .icon-container img {
   width: 35px;
+  height: 35px;
 }
 
 .footer-logo {
   width: 55px;
+  height: 55px;
 }
 
 .display-options-off {
