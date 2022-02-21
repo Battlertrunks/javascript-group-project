@@ -49,14 +49,14 @@ const dripsItems = [
   ],
   [
     {
-      image: "./assets/Coffee-images/cold-brew.jpeg",
+      image: "./assets/Coffee-images/iced-americano.jpeg",
       name: "cold brew",
       description: "Our house brew on the rocks",
       price: 1.99,
       imgAlt: "Cold brew drink",
     },
     {
-      image: "./assets/Coffee-images/iced-americano.jpeg",
+      image: "./assets/Coffee-images/americano.jpeg",
       name: "iced americano",
       description: "A bold espresso stretched and chilled to perfection",
       price: 3.59,
@@ -168,7 +168,10 @@ const sideBarBtn = document.querySelector(".side-bar-icon");
 const slidePage = document.querySelector(".slide-links-container");
 
 header.addEventListener("click", (e) => {
-  if (e.target.id === "shopping-cart-icon") {
+  if (
+    e.target.id === "shopping-cart-icon" ||
+    e.target.classList.contains("cart-amount")
+  ) {
     viewCart.style.display = "block";
     viewCart.classList.add("slide-effect");
     body.classList.add("body-scroll-off");
@@ -206,7 +209,7 @@ const addToListOfCart = () => {
   listItem.classList.add("item-in-checkout");
   previewImage.setAttribute("src", checkOut[checkOut.length - 1].image);
   itemHeading.textContent = checkOut[checkOut.length - 1].name;
-  price.textContent = checkOut[checkOut.length - 1].price;
+  price.textContent = `$${checkOut[checkOut.length - 1].price}`;
   remove.textContent = "remove";
   remove.setAttribute("class", "remove-Btn");
 
