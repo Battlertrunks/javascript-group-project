@@ -281,7 +281,6 @@ const cartItemsContainer = document.querySelector(".cart-items-container");
 const cashForm = document.querySelector(".cash-form");
 
 // card form values
-const cardInputs = [...document.querySelectorAll(".card-payment-form input")];
 
 viewCart.addEventListener("click", (e) => {
   if (
@@ -320,16 +319,60 @@ viewCart.addEventListener("click", (e) => {
   }
 });
 
-payWithCardContainer.addEventListener("click", (e) => {
+const cardNumber = document.querySelector(".card-number");
+const cardExp = document.querySelector(".card-exp");
+const cardCvv = document.querySelector(".card-cvv");
+const cardCheckerDate = new Date();
+
+payWithCardContainer.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (e.target.classList.contains("card-pay-btn")) {
-    const valuesEnteredCorrectly = cardInputs.some(
-      (input) => String(input.value).length > 0
-    );
-    if (valuesEnteredCorrectly) {
-      displayRecieptCard();
-    }
-  } else if (
+  const cardInputs = [...document.querySelectorAll(".card-payment-form input")];
+  let valuesEnteredCorrectly = cardInputs.some(
+    (input) => String(input.value).length > 0
+  );
+
+  if (String(cardInputs[1].value).length !== 16) {
+    cardNumber.style.color = "red";
+    valuesEnteredCorrectly = false;
+  }
+
+  const month = cardCheckerDate.getMonth() + 1;
+  const year = cardCheckerDate.getFullYear();
+  const dateFormat = String(cardInputs[2].value).split("-");
+  console.log(
+    dateFormat,
+    month,
+    year,
+    parseInt(dateFormat[1]),
+    parseInt(dateFormat[0])
+  );
+  if (
+    parseInt(dateFormat[0]) < year ||
+    (parseInt(dateFormat[1]) <= month && parseInt(dateFormat[0]) === year)
+  ) {
+    console.log("runs");
+    cardExp.style.color = "red";
+    valuesEnteredCorrectly = false;
+  }
+
+  if (String(cardInputs[3].value).length !== 3) {
+    cardCvv.style.color = "red";
+    valuesEnteredCorrectly = false;
+  }
+
+  if (valuesEnteredCorrectly) {
+    cardNumber.style.color = "#8f8f8f";
+    cardCvv.style.color = "#8f8f8f";
+    cardExp.style.color = "#8f8f8f";
+    cardInputs.forEach((input) => (input.value = ""));
+    displayRecieptCard();
+  }
+});
+
+const quickPay = document.querySelector(".apple-google-btns");
+
+quickPay.addEventListener("click", (e) => {
+  if (
     e.target.classList.contains("apple-pay") ||
     e.target.classList.contains("google-pay")
   ) {
@@ -346,6 +389,10 @@ const displayRecieptCard = () => {
 
 let finishPayment = false;
 
+const depositedMoney = document.querySelector(".cash-deposited");
+const cashBack = document.querySelector(".cash-back");
+const cashAmountText = document.querySelector(".cash-amount-text");
+
 payWithCashContainer.addEventListener("click", (e) => {
   if (e.target.classList.contains("finish-cash-btn") && finishPayment) {
     recieptDisplayContainer.classList.remove("display-options-off");
@@ -353,12 +400,11 @@ payWithCashContainer.addEventListener("click", (e) => {
     payWithCashContainer.classList.add("display-options-off");
     finishPayment = false;
     receieptItemsDisplay();
+    depositedMoney.textContent = "$0.00";
+    cashBack.textContent = "$0.00";
+    document.querySelector("#cash-amount").value = 0;
   }
 });
-
-const depositedMoney = document.querySelector(".cash-deposited");
-const cashBack = document.querySelector(".cash-back");
-const cashAmountText = document.querySelector(".cash-amount-text");
 
 cashForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -382,6 +428,10 @@ const recieptDate = document.querySelector(".reciept-date");
 const recieptWorker = document.querySelector(".reciept-served-by");
 const recieptNumTrans = document.querySelector(".recipet-number-trans");
 const recieptDateTrans = document.querySelector(".reciept-date-trans");
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDate();
 
 const receieptItemsDisplay = () => {
   const date = new Date();
